@@ -1,20 +1,47 @@
 layout {
-    // タブ
-    pane size=1 borderless=true {
-        plugin location="zellij:tab-bar"
+    tab focus=true{
+    
+        // タブ
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+
+        // メインコンテンツ
+        pane split_direction="vertical" {
+            pane split_direction="horizontal" {
+                pane {
+                    command "btm"
+                    size "40%"
+                }
+                pane {
+                    command "nu"
+                }
+            }
+            pane {
+                focus true
+                command "nu"
+            }
+        }
+    
+        // キーバインドの説明
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
     }
 
-    // メインコンテンツ
-    pane split_direction="vertical" {
-        pane split_direction="horizontal" {
-            pane command="btm"
-            pane command="nu"
+    // ふたつ目のタブは空っぽで起動
+    tab {
+        // タブ
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
         }
-        pane command="nu"
-   }
 
-    // キーバインドの説明
-    pane size=2 borderless=true {
-        plugin location="zellij:status-bar"
+        // メインコンテンツ
+        pane 
+            
+        // キーバインドの説明
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
     }
 }
