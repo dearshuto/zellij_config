@@ -1,0 +1,41 @@
+layout {
+    tab focus=true {
+        // タブ
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+
+        // メインコンテンツ
+        pane split_direction="horizontal" {
+            pane {
+                command "btm"
+                size "25%"
+            }
+            pane {
+                focus true
+                command "nu"
+            }
+        }
+
+        // キーバインドの説明
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    // もう一個のタブ中身は空っぽにしておく
+    tab {
+        // タブ
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+
+        // メインコンテンツ
+        pane command="nu"
+        
+        // キーバインドの説明
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+}
