@@ -1,0 +1,10 @@
+// config.kdl
+plugins {
+    shaka_bridge location="file:/Users/shuto/develop/github/sj/shalacritty/target/wasm32-wasip1/debug/zellij-shaka-bridge.wasm"
+}
+
+load_plugins {
+    shaka_bridge {
+        _allow_all_permissions true
+    }
+}
